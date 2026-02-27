@@ -29,8 +29,7 @@ class Entier : public Symbole {
 class Expr : public Symbole {
    public:
       Expr():Symbole(EXPR) {}
-      virtual ~Expr() {}
-      virtual double eval(const map<string, double> & valeurs) = 0;
+      ~Expr() {}
       int getValeur();
    protected:
       int valeur;

@@ -1,4 +1,4 @@
-#include "automate.h"
+#include "../automate.h"
 class State2 : public State {
   public :
     State2();

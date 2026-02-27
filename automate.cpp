@@ -1,10 +1,12 @@
-void Automate::decalage(Symbole * s, Etat * e) {
+#include "automate.h"
+
+void Automate::decalage(Symbole * s, State * e) {
     symbolstack.push_back(s);
     statestack.push_back(e);
     lexer->Avancer();
 }
 
-void Automate::transitionsimple(Symbole * s, Etat * e) {
+void Automate::transitionSimple(Symbole * s, State * e) {
     symbolstack.push_back(s);
     statestack.push_back(e);
 }
@@ -19,10 +21,13 @@ void Automate::reduction(int n, Symbole * s) {
 }
 
 void Automate::popAndDestroySymbol(){
-    Symbole* temp = symbolstack.pop_back();
+    Symbole* temp = symbolstack.back();
+    symbolstack.pop_back();
     delete temp;
 }
 
 Symbole* Automate::popSymbol(){
-    return symbolstack.pop_back();
+    Symbole * result = symbolstack.back();
+    symbolstack.pop_back();
+    return result;
 }

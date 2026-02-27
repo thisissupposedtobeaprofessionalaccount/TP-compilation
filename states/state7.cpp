@@ -21,10 +21,10 @@ bool State7::transition(Automate &automate, Symbole *s) {
   case PLUS:
   case CLOSEPAR:
   case FIN:
-    Expr *s1 = (Expr *)automate.popSymbol();
+    Entier *s1 = (Entier *)automate.popSymbol();
     automate.popAndDestroySymbol();
-    Expr *s2 = (Expr *)automate.popSymbol();
-    automate.reduction(3, new ExprPlus(s2, s1));
+    Entier *s2 = (Entier *)automate.popSymbol();
+    automate.reduction(3, new Expr(s2->getValeur() + s1->getValeur()));
     break;
   default:
     std::cout << "Erreur de syntaxe" << endl;
