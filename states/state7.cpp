@@ -1,4 +1,6 @@
 #pragma once
+#include "../automate.h"
+#include "../symbole.h"
 #include "state0.h"
 #include "state1.h"
 #include "state2.h"
@@ -10,27 +12,23 @@
 #include "state8.h"
 #include "state9.h"
 #include <iostream>
-#include "../automate.h"
-#include "../symbole.h"
 
 bool State7::transition(Automate &automate, Symbole *s) {
   switch (*s) {
-    case PLUS:
-    automate.reduction(s, new State2);
-    break;
-    case MULT:
+  case MULT:
     automate.decalage(s, new State5);
     break;
-    case CLOSEPAR:
-    automate.reduction(s, new State2);
+  case PLUS:
+  case CLOSEPAR:
+  case FIN:
+    Expr *s1 = (Expr *)automate.popSymbol();
+    automate.popAndDestroySymbol();
+    Expr *s2 = (Expr *)automate.popSymbol();
+    automate.reduction(3, new ExprPlus(s2, s1));
     break;
-    case FIN:
-    automate.reduction(s, new State2);
-    break;
-   default:
+  default:
     std::cout << "Erreur de syntaxe" << endl;
     break;
   }
   return false;
 }
-
