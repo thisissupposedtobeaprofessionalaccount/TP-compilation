@@ -1,4 +1,3 @@
-#pragma once
 #include "../automate.h"
 #include "../symbole.h"
 #include "state0.h"
@@ -18,6 +17,7 @@ bool State7::transition(Automate &automate, Symbole *s) {
   case MULT:
     automate.decalage(s, new State5);
     break;
+    {
   case PLUS:
   case CLOSEPAR:
   case FIN:
@@ -26,6 +26,7 @@ bool State7::transition(Automate &automate, Symbole *s) {
     Entier *s2 = (Entier *)automate.popSymbol();
     automate.reduction(3, new Expr(s2->getValeur() + s1->getValeur()));
     break;
+    }
   default:
     std::cout << "Erreur de syntaxe" << endl;
     break;

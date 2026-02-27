@@ -1,5 +1,7 @@
-#pragma once
 #include "state0.h"
+#include "state1.h"
+#include "state2.h"
+#include "state3.h"
 #include "../automate.h"
 #include "../symbole.h"
 #include <iostream>

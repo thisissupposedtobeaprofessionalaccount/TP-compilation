@@ -19,8 +19,9 @@ class Symbole {
 
 class Entier : public Symbole {
    public:
-      Entier(int v) : Symbole(INT), valeur(v) { }
+      Entier(int val) : Symbole(INT), valeur(val) { }
       ~Entier() { }
+      void Affiche();
       int getValeur();
    protected:
       int valeur;
@@ -28,8 +29,9 @@ class Entier : public Symbole {
 
 class Expr : public Symbole {
    public:
-      Expr():Symbole(EXPR) {}
+      Expr(int val):Symbole(EXPR), valeur(val) {}
       ~Expr() {}
+      void Affiche();
       int getValeur();
    protected:
       int valeur;

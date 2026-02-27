@@ -1,3 +1,4 @@
+#pragma once
 #include "../automate.h"
 class State5 : public State {
   public :
