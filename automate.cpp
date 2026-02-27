@@ -17,3 +17,12 @@ void Automate::reduction(int n, Symbole * s) {
     }
     statestack.back()->transition(*this,s);
 }
+
+void Automate::popAndDestroySymbol(){
+    Symbole* temp = symbolstack.pop_back();
+    delete temp;
+}
+
+Symbole* Automate::popSymbol(){
+    return symbolstack.pop_back();
+}
