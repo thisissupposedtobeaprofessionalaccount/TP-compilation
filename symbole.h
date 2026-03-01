@@ -22,15 +22,17 @@ class Entier : public Symbole {
       Entier(int v) : Symbole(INT), valeur(v) { }
       ~Entier() { }
       int getValeur();
+      void Affiche();
    protected:
       int valeur;
 };
 
 class Expr : public Symbole {
    public:
-      Expr():Symbole(EXPR) {}
+      Expr(int v):Symbole(EXPR), valeur(v) {}
       ~Expr() {}
       int getValeur();
+      void Affiche();
    protected:
       int valeur;
 };
