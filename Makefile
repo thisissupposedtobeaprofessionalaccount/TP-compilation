@@ -8,8 +8,22 @@ CXXFLAGS = -Wall -g
 TARGET = main
 
 # Source files
-SRCS = main.cpp automate.cpp lexer.cpp symbole.cpp
-
+SRCS = main.cpp \
+	   automate.cpp \
+	   lexer.cpp \
+	   symbole.cpp \
+	   ./states/state.cpp \
+	   ./states/state0.cpp \
+	   ./states/state1.cpp \
+	   ./states/state2.cpp \
+	   ./states/state3.cpp \
+	   ./states/state4.cpp \
+	   ./states/state5.cpp \
+	   ./states/state6.cpp \
+	   ./states/state7.cpp \
+	   ./states/state8.cpp \
+	   ./states/state9.cpp \
+		
 # Object files
 OBJS = $(SRCS:.cpp=.o)
 

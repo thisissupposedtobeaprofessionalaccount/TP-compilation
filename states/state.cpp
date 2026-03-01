@@ -1,7 +1,7 @@
 #include "state.h"
 
 State::State(std::string name) {
-  // ctor
+  this->name = name;
 }
 
 State::~State() {

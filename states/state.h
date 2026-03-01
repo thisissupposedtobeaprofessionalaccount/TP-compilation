@@ -1,8 +1,8 @@
 #pragma once
-#include "../automate.h"
 #include <string>
 
 class Automate;
+class Symbole;
 
 class State {
 public:
@@ -12,5 +12,5 @@ public:
   virtual bool transition(Automate &automate, Symbole *s) = 0;
 
 protected:
-  string name;
+  std::string name;
 };

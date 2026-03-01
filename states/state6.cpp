@@ -1,4 +1,3 @@
-#pragma once
 #include "state4.h"
 #include "state5.h"
 #include "state6.h"
@@ -8,7 +7,6 @@
 #include "../symbole.h"
 
 bool State6::transition(Automate &automate, Symbole *s) {
-  cout<<"State 6"<<endl;
   switch (*s) {
     case PLUS:
       automate.decalage(s, new State4);
