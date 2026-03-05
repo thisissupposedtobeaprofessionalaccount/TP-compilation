@@ -5,8 +5,6 @@
 #include <vector>
 #include "lexer.h"
 
-class State;
-
 class Automate {
     public:
         Automate();

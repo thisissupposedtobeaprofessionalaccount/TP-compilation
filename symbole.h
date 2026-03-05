@@ -17,22 +17,12 @@ class Symbole {
       int ident;
 };
 
-class Entier : public Symbole {
-   public:
-      Entier(int val) : Symbole(INT), valeur(val) { }
-      ~Entier() { }
-      void Affiche();
-      int getValeur();
-   protected:
-      int valeur;
-};
-
 class Expr : public Symbole {
    public:
-      Expr(int val):Symbole(EXPR), valeur(val) {}
+      Expr(int v):Symbole(EXPR), valeur(v) {}
       ~Expr() {}
-      void Affiche();
       int getValeur();
+      void Affiche() override;
    protected:
       int valeur;
 };

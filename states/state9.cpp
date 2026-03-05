@@ -1,7 +1,6 @@
 #include "state9.h"
 #include "../automate.h"
 #include "../symbole.h"
-#include "state8.h"
 #include <iostream>
 
 bool State9::transition(Automate &automate, Symbole *s) {

@@ -1,18 +1,10 @@
 #include "state8.h"
 #include "../automate.h"
 #include "../symbole.h"
-#include "state0.h"
-#include "state1.h"
-#include "state2.h"
-#include "state3.h"
-#include "state4.h"
-#include "state5.h"
-#include "state6.h"
-#include "state7.h"
-#include "state9.h"
 #include <iostream>
 
 bool State8::transition(Automate &automate, Symbole *s) {
+  cout<<"State 8"<<endl;
   switch (*s) {
     {
     case PLUS:
