@@ -1,4 +1,3 @@
-#pragma once
 #include "state2.h"
 #include "state3.h"
 #include "state5.h"
@@ -12,13 +11,13 @@ bool State5::transition(Automate &automate, Symbole *s) {
   switch (*s) {
     case INT:
       automate.decalage(s, new State3);
-      break;
+      return true;
     case OPENPAR:
       automate.decalage(s, new State2);
-      break;
+      return true;
     case EXPR:
       automate.transitionSimple(s, new State8);
-      break;
+      return true;
     default:
       std::cout << "Erreur de syntaxe" << endl;
       break;

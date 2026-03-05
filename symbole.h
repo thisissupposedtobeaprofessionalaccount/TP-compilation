@@ -27,3 +27,12 @@ class Expr : public Symbole {
       int valeur;
 };
 
+class Entier : public Symbole {
+   public:
+      Entier(int v) : Symbole(INT), valeur(v) {}
+      ~Entier() {}
+      int getValeur() const { return valeur; }
+      void Affiche() override;
+   protected:
+      int valeur;
+};

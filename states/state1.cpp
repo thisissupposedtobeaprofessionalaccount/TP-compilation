@@ -10,13 +10,13 @@ bool State1::transition(Automate &automate, Symbole *s) {
   switch (*s) {
     case PLUS:
       automate.decalage(s, new State4);
-      break;
+      return true;
     case MULT:
       automate.decalage(s, new State5);
-      break;
+      return true;
     case FIN:
       return automate.accepter(s);
-      break;
+      return true;
     default:
       std::cout << "Erreur de syntaxe" << endl;
       break;

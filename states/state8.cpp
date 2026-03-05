@@ -15,7 +15,7 @@ bool State8::transition(Automate &automate, Symbole *s) {
       automate.popAndDestroySymbol();
       Expr *s2 = (Expr *)automate.popSymbol();
       automate.reduction(3, new Expr(s2->getValeur() * s1->getValeur()));
-      break;
+      return true;
     }
   default:
     std::cout << "Erreur de syntaxe" << endl;

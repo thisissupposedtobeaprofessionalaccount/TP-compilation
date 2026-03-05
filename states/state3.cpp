@@ -13,7 +13,7 @@ bool State3::transition(Automate &automate, Symbole *s) {
     case FIN:
       Expr *s1 = (Expr *)automate.popSymbol();
       automate.reduction(1, new Expr(s1->getValeur()));
-      break;
+      return true;
     }
     default:
       std::cout << "Erreur de syntaxe" << endl;
